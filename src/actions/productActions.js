@@ -29,9 +29,14 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
 ) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
-
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
+      },
+    }
     const { data } = await axios.get(
-      `https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+      `https://secure-ravine-48894.herokuapp.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`,
+      config
     )
 
     dispatch({
@@ -53,7 +58,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-    const { data } = await axios.get(`https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products/${id}`)
+    const { data } = await axios.get(`/api/products/${id}`)
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -86,7 +91,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     }
 
-    await axios.delete(`https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products/${id}`, config)
+    await axios.delete(`/api/products/${id}`, config)
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
@@ -122,7 +127,7 @@ export const createProduct = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.post(`https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products`, {}, config)
+    const { data } = await axios.post(`/api/products`, {}, config)
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
@@ -161,7 +166,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products/${product._id}`,
+      `/api/products/${product._id}`,
       product,
       config
     )
@@ -206,7 +211,7 @@ export const createProductReview = (productId, review) => async (
       },
     }
 
-    await axios.post(`https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products/${productId}/reviews`, review, config)
+    await axios.post(`/api/products/${productId}/reviews`, review, config)
 
     dispatch({
       type: PRODUCT_CREATE_REVIEW_SUCCESS,
@@ -230,7 +235,12 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })
 
-    const { data } = await axios.get(`https://cors-anywhere-herokuapp.com/https://secure-ravine-48894.herokuapp.com/api/products/top`)
+    const config = {
+      headers: {
+        "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
+      },
+    }
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/products/top`, config)
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
