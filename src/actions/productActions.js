@@ -31,7 +31,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     dispatch({ type: PRODUCT_LIST_REQUEST })
 
     const { data } = await axios.get(
-      `/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+      `https://secure-ravine-48894.herokuapp.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
 
     dispatch({
@@ -230,7 +230,7 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })
 
-    const { data } = await axios.get(`/api/products/top`)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/products/top`)
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
