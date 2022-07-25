@@ -130,7 +130,7 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/users/${id}`, config)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/users/${id}`, config)
 
     dispatch({
       type: USER_DETAILS_SUCCESS,
@@ -210,7 +210,7 @@ export const listUsers = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/users`, config)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/users`, config)
 
     dispatch({
       type: USER_LIST_SUCCESS,

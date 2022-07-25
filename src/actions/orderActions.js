@@ -81,7 +81,7 @@ export const getOrderDetails = (id) => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/orders/${id}`, config)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/orders/${id}`, config)
 
     dispatch({
       type: ORDER_DETAILS_SUCCESS,
@@ -204,7 +204,7 @@ export const listMyOrders = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/orders/myorders`, config)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/orders/myorders`, config)
 
     dispatch({
       type: ORDER_LIST_MY_SUCCESS,
@@ -241,7 +241,7 @@ export const listOrders = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.get(`/api/orders`, config)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/orders`, config)
 
     dispatch({
       type: ORDER_LIST_SUCCESS,
