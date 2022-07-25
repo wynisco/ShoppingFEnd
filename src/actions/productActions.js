@@ -24,22 +24,14 @@ import {
 } from '../constants/productConstants'
 import { logout } from './userActions'
 
-const NetlifyUrl = `https://secure-ravine-48894.herokuapp.com`;
 export const listProducts = (keyword = '', pageNumber = '') => async (
   dispatch
 ) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
-    const config = {
-      headers: {
-        // "Origin": "https://melodic-genie-30e732.netlify.app/",
-        // "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-        // "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
-        // "Access-Control-Allow-Headers": "*",
-      },
-    }
+
     const { data } = await axios.get(
-      `${NetlifyUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
+      `https://secure-ravine-48894.herokuapp.com/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
 
     dispatch({
@@ -61,7 +53,7 @@ export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-    const { data } = await axios.get(`${NetlifyUrl}/api/products/${id}`)
+    const { data } = await axios.get(`/api/products/${id}`)
 
     dispatch({
       type: PRODUCT_DETAILS_SUCCESS,
@@ -94,7 +86,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     }
 
-    await axios.delete(`${NetlifyUrl}/api/products/${id}`, config)
+    await axios.delete(`/api/products/${id}`, config)
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
@@ -130,7 +122,7 @@ export const createProduct = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.post(`${NetlifyUrl}/api/products`, {}, config)
+    const { data } = await axios.post(`/api/products`, {}, config)
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
@@ -169,7 +161,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `${NetlifyUrl}/api/products/${product._id}`,
+      `/api/products/${product._id}`,
       product,
       config
     )
@@ -214,7 +206,7 @@ export const createProductReview = (productId, review) => async (
       },
     }
 
-    await axios.post(`${NetlifyUrl}/api/products/${productId}/reviews`, review, config)
+    await axios.post(`/api/products/${productId}/reviews`, review, config)
 
     dispatch({
       type: PRODUCT_CREATE_REVIEW_SUCCESS,
@@ -238,7 +230,7 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })
 
-    const { data } = await axios.get(NetlifyUrl)
+    const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/products/top`)
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
