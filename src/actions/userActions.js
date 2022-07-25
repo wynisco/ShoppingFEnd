@@ -40,7 +40,7 @@ export const login = (email, password) => async (dispatch) => {
     }
 
     const { data } = await axios.post(
-      '/api/users/login',
+      'https://secure-ravine-48894.herokuapp.com/api/users/login',
       { email, password },
       config
     )
