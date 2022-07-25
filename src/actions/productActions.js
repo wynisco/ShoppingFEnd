@@ -242,8 +242,8 @@ export const listTopProducts = () => async (dispatch) => {
       headers: {
         // "Origin": "https://melodic-genie-30e732.netlify.app/",
         "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Headers": "*",
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Headers": "*",
       },
     }
     const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/products/top`, config)
