@@ -31,7 +31,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     dispatch({ type: PRODUCT_LIST_REQUEST })
     const config = {
       headers: {
-        "Origin": "https://melodic-genie-30e732.netlify.app/",
+        // "Origin": "https://melodic-genie-30e732.netlify.app/",
         "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
         "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
         "Access-Control-Allow-Headers": "*",
