@@ -241,7 +241,7 @@ export const listTopProducts = () => async (dispatch) => {
     const config = {
       headers: {
         // "Origin": "https://melodic-genie-30e732.netlify.app/",
-        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        // "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
         // "Access-Control-Allow-Origin": "*",
         // "Access-Control-Allow-Headers": "*",
       },
