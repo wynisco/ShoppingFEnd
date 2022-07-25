@@ -31,6 +31,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     dispatch({ type: PRODUCT_LIST_REQUEST })
     const config = {
       headers: {
+        "Origin": "https://melodic-genie-30e732.netlify.app/",
         "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
       },
     }
@@ -237,6 +238,7 @@ export const listTopProducts = () => async (dispatch) => {
 
     const config = {
       headers: {
+        "Origin": "https://melodic-genie-30e732.netlify.app/",
         "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
       },
     }
