@@ -67,7 +67,7 @@ const ProductEditScreen = ({ match, history }) => {
 
       const { data } = await axios.post('https://secure-ravine-48894.herokuapp.com/api/upload', formData, config)
 
-      setImage(data)
+      setImage('https://secure-ravine-48894.herokuapp.com'+data)
       setUploading(false)
     } catch (error) {
       console.error(error)

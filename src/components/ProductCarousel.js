@@ -25,12 +25,12 @@ const ProductCarousel = () => {
   ) : (
     <Carousel pause='hover' className='bg-dark'>
       {products.map((product) => {
-        console.log(product.image.substring(0, 8), "/images/")
-        if (product.image.substring(0, 8) !== "/images/") {
-          product.image = `https://secure-ravine-48894.herokuapp.com/${product.image}`
-          console.log(product.image, "inside if")
-        }
-        console.log(product.image, product.name)
+        // console.log(product.image.substring(0, 8), "/images/")
+        // if (product.image.substring(0, 8) !== "/images/") {
+        //   product.image = `https://secure-ravine-48894.herokuapp.com/${product.image}`
+        //   console.log(product.image, "inside if")
+        // }
+        // console.log(product.image, product.name)
         return (
           <Carousel.Item key={product._id}>
             <Link to={`/product/${product._id}`}>
