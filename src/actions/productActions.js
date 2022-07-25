@@ -86,7 +86,7 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     }
 
-    await axios.delete(`/api/products/${id}`, config)
+    await axios.delete(`https://secure-ravine-48894.herokuapp.com/api/products/${id}`, config)
 
     dispatch({
       type: PRODUCT_DELETE_SUCCESS,
