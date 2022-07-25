@@ -123,7 +123,7 @@ export const payOrder = (orderId, paymentResult) => async (
     }
 
     const { data } = await axios.put(
-      `/api/orders/${orderId}/pay`,
+      `https://secure-ravine-48894.herokuapp.com/api/orders/${orderId}/pay`,
       paymentResult,
       config
     )
@@ -164,7 +164,7 @@ export const deliverOrder = (order) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `/api/orders/${order._id}/deliver`,
+      `https://secure-ravine-48894.herokuapp.com/api/orders/${order._id}/deliver`,
       {},
       config
     )

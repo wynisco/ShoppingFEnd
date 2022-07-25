@@ -161,7 +161,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     }
 
     const { data } = await axios.put(
-      `/api/products/${product._id}`,
+      `https://secure-ravine-48894.herokuapp.com/api/products/${product._id}`,
       product,
       config
     )
