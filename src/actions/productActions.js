@@ -32,6 +32,7 @@ export const listProducts = (keyword = '', pageNumber = '') => async (
     const config = {
       headers: {
         "Origin": "https://melodic-genie-30e732.netlify.app/",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
         "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
       },
     }
@@ -239,7 +240,8 @@ export const listTopProducts = () => async (dispatch) => {
     const config = {
       headers: {
         "Origin": "https://melodic-genie-30e732.netlify.app/",
-        "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
+        "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
+        "Access-Control-Allow-Origin": "*",
       },
     }
     const { data } = await axios.get(`https://secure-ravine-48894.herokuapp.com/api/products/top`, config)
