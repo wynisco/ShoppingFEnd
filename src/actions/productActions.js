@@ -24,20 +24,13 @@ import {
 } from '../constants/productConstants'
 import { logout } from './userActions'
 
-const NetlifyUrl = "https://secure-ravine-48894.herokuapp.com";
+const NetlifyUrl = `https://secure-ravine-48894.herokuapp.com`;
 export const listProducts = (keyword = '', pageNumber = '') => async (
   dispatch
 ) => {
   try {
     dispatch({ type: PRODUCT_LIST_REQUEST })
-    // const config = {
-    //   headers: {
-    //     // "Origin": "https://melodic-genie-30e732.netlify.app/",
-    //     "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-    //     "Access-Control-Allow-Origin": "https://secure-ravine-48894.herokuapp.com/",
-    //     "Access-Control-Allow-Headers": "*",
-    //   },
-    // }
+
     const { data } = await axios.get(
       `${NetlifyUrl}/api/products?keyword=${keyword}&pageNumber=${pageNumber}`
     )
@@ -238,15 +231,7 @@ export const listTopProducts = () => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_TOP_REQUEST })
 
-    // const config = {
-    //   headers: {
-    //     // "Origin": "https://melodic-genie-30e732.netlify.app/",
-    //     // "Access-Control-Allow-Methods": "DELETE, POST, GET, OPTIONS",
-    //     // "Access-Control-Allow-Origin": "*",
-    //     // "Access-Control-Allow-Headers": "*",
-    //   },
-    // }
-    const { data } = await axios.get(`${NetlifyUrl}`)
+    const { data } = await axios.get(NetlifyUrl)
 
     dispatch({
       type: PRODUCT_TOP_SUCCESS,
