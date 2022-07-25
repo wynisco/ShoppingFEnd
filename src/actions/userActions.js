@@ -87,7 +87,7 @@ export const register = (name, email, password) => async (dispatch) => {
     }
 
     const { data } = await axios.post(
-      '/api/users',
+      'https://secure-ravine-48894.herokuapp.com/api/users',
       { name, email, password },
       config
     )

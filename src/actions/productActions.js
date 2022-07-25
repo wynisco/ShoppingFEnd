@@ -122,7 +122,7 @@ export const createProduct = () => async (dispatch, getState) => {
       },
     }
 
-    const { data } = await axios.post(`/api/products`, {}, config)
+    const { data } = await axios.post(`https://secure-ravine-48894.herokuapp.com/api/products`, {}, config)
 
     dispatch({
       type: PRODUCT_CREATE_SUCCESS,
@@ -206,7 +206,7 @@ export const createProductReview = (productId, review) => async (
       },
     }
 
-    await axios.post(`/api/products/${productId}/reviews`, review, config)
+    await axios.post(`https://secure-ravine-48894.herokuapp.com/api/products/${productId}/reviews`, review, config)
 
     dispatch({
       type: PRODUCT_CREATE_REVIEW_SUCCESS,
