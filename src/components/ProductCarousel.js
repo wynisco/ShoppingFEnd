@@ -16,31 +16,32 @@ const ProductCarousel = () => {
     dispatch(listTopProducts())
   }, [dispatch])
 
+
+
   return loading ? (
     <Loader />
   ) : error ? (
     <Message variant='danger'>{error}</Message>
   ) : (
     <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => (
-        <Carousel.Item key={product._id}>
-          <Link to={`/product/${product._id}`}>
-            console.log({product.image}.substring(0,8), "/images/")
-            if({product.image}.substring(0,8) === "/images/") {
+      {products.map((product) => {
+        console.log(product.image.substring(0, 8), "/images/")
+        if (product.image.substring(0, 8) !== "/images/") {
+          product.image = `https://secure-ravine-48894.herokuapp.com/${product.image}`
+        }
+        return (
+          <Carousel.Item key={product._id}>
+            <Link to={`/product/${product._id}`}>
               <Image src={product.image} alt={product.name} fluid />
-            }
-            else{
-              <Image src={`https://secure-ravine-48894.herokuapp.com/${product.image}`} alt={product.name} fluid />
-            }
-
-            <Carousel.Caption className='carousel-caption'>
-              <h2>
-                {product.name} (${product.price})
-              </h2>
-            </Carousel.Caption>
-          </Link>
-        </Carousel.Item>
-      ))}
+              <Carousel.Caption className='carousel-caption'>
+                <h2>
+                  {product.name} (${product.price})
+                </h2>
+              </Carousel.Caption>
+            </Link>
+          </Carousel.Item>
+        )
+      })}
     </Carousel>
   )
 }
