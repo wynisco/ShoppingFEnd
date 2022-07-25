@@ -25,7 +25,14 @@ const ProductCarousel = () => {
       {products.map((product) => (
         <Carousel.Item key={product._id}>
           <Link to={`/product/${product._id}`}>
-            <Image src={product.image} alt={product.name} fluid />
+            console.log({product.image}.substring(0,8), "/images/")
+            if({product.image}.substring(0,8) === "/images/") {
+              <Image src={product.image} alt={product.name} fluid />
+            }
+            else{
+              <Image src={`https://secure-ravine-48894.herokuapp.com/${product.image}`} alt={product.name} fluid />
+            }
+
             <Carousel.Caption className='carousel-caption'>
               <h2>
                 {product.name} (${product.price})
