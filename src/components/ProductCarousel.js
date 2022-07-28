@@ -24,13 +24,25 @@ const ProductCarousel = () => {
     <Message variant='danger'>{error}</Message>
   ) : (
     <Carousel pause='hover' className='bg-dark'>
-      {products.map((product) => {
+      {products.map((product,idx) => {
         // console.log(product.image.substring(0, 8), "/images/")
         // if (product.image.substring(0, 8) !== "/images/") {
         //   product.image = `https://secure-ravine-48894.herokuapp.com/${product.image}`
         //   console.log(product.image, "inside if")
         // }
         // console.log(product.image, product.name)
+
+        //bug: top 3 products displayed in 2,3,1 instead of 1-3
+        // console.log(products.length,idx, "prod size");
+        // if(idx!== products.length-1)         product = products[idx+1]
+        // else product = products[0]
+        
+        //bug: carousel shows different item's image
+        // idx = (idx!== products.length-1) ? idx+1:0;
+
+
+        //bug: carousel links to different item image
+        // idx = (idx!== products.length-1) ? idx+1:0;
         return (
           <Carousel.Item key={product._id}>
             <Link to={`/product/${product._id}`}>

@@ -20,11 +20,17 @@ h2 {
   margin: 0.1rem;
 }
 
+/* bug: following can make blue color */
+  /* filter: invert(.5) sepia(1) saturate(5) hue-rotate(175deg); */
+
 /* carousel */
-.carousel-item-next,
-.carousel-item-prev,
+/* bug: comment next two lines for visual glitch  */
+/* bug: image loads then changes to center */
+/* .carousel-item-next,
+.carousel-item-prev, */
 .carousel-item.active {
   display: flex;
+
 }
 .carousel-caption {
   position: absolute;
@@ -45,6 +51,7 @@ h2 {
 }
 .carousel a {
   margin: 0 auto;
+
 }
 @media (max-width: 900px) {
   .carousel-caption h2 {
