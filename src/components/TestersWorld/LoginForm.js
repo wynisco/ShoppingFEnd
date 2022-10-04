@@ -19,7 +19,7 @@ const Product = ({ product }) => {
   function handleSubmit (e) {
     e.preventDefault()
   if(mockData.correctEmail=== email && mockData.correctPwd){
-    window.location.replace("welcome")
+    window.location.replace("testswelcome")
   } 
   else {
     setErrorMessage("Please enter valid email or password")
@@ -30,7 +30,7 @@ const Product = ({ product }) => {
     <Card className='my-3 p-3 rounded'>
     <h2> TESTING LOGIN INSTRUCTIONS</h2>
     <p>  To successfully Login, us  e  email as test@wynisco.com and password as WyniscoTraining
-    Once you login it will replace the current page url with to /tests/welcome</p>
+    Once you login it will replace the current page url with to /testswelcome</p>
 
     <p> In all other cases it will return an error message on top </p>
 

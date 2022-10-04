@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
 import Header from './components/Header'
 import Footer from './components/Footer'
-import AutoTestForm from './components/TestersWorld/AutoTestForm'
+import LoginForm from './components/TestersWorld/LoginForm'
 import Welcome from './components/TestersWorld/Welcome'
+import Tests from './components/TestersWorld/Tests'
+import ComponentTesting from './components/TestersWorld/ComponentTesting'
 import HomeScreen from './screens/HomeScreen'
 import ProductScreen from './screens/ProductScreen'
 import CartScreen from './screens/CartScreen'
@@ -35,8 +37,10 @@ const App = () => {
           <Route path='/register' component={RegisterScreen} />
           <Route path='/profile' component={ProfileScreen} />
           <Route path='/product/:id' component={ProductScreen} />
-          <Route path='/tests/autotestform' component={AutoTestForm} />
-          <Route path='/tests/welcome' component={Welcome} />
+          <Route path='/tests/' component={Tests} />
+          <Route path='/testslogin' component={LoginForm} />
+          <Route path='/testscomponents' component={ComponentTesting} />
+          <Route path='/testswelcome' component={Welcome} />
           <Route path='/cart/:id?' component={CartScreen} />
           <Route path='/admin/userlist' component={UserListScreen} />
           <Route path='/admin/user/:id/edit' component={UserEditScreen} />

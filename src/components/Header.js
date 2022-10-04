@@ -19,7 +19,13 @@ const Header = () => {
   return (
     <header>
       <Navbar bg='dark' variant='dark' expand='lg' collapseOnSelect>
+        
         <Container>
+        <LinkContainer to='/tests'>
+                  <Nav.Link>
+                    <i className='fas fa-user'></i> Tests
+                  </Nav.Link>
+                </LinkContainer>
           <LinkContainer to='/'>
             <Navbar.Brand>Wynisco ProShop</Navbar.Brand>
           </LinkContainer>
@@ -62,6 +68,7 @@ const Header = () => {
                 </NavDropdown>
               )}
             </Nav>
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>

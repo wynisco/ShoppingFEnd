@@ -9,7 +9,7 @@ const Welcome = () => {
   return (
     <Card className='my-3 p-3 rounded'>
     Welcome , You are now logged in with
-    <Button onClick={()=>window.location.replace("/tests/autotestform")}>Return to Login Page</Button>
+    <Button onClick={()=>window.location.replace("/tests")}>Return to Main Testing Page</Button>
 
 
     </Card>
