@@ -1,6 +1,7 @@
 
 Wynisco Shopping App Front End Deployed on Netlify
 Available on proshop.wynisco.com
+Check it out
 
 ## Available Scripts
 
