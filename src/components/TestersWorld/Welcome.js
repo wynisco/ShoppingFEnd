@@ -1,10 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import {useState} from 'react'
+// import Form from 'react-bootstrap/Form';
+// import {useState} from 'react'
 
-const Welcome = ({  }) => {
+const Welcome = () => {
  
   return (
     <Card className='my-3 p-3 rounded'>
