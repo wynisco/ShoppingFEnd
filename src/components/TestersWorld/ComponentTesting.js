@@ -4,11 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import {useState} from 'react';
   
-import * as React from 'react';
 import Box from '@mui/material/Box';
+// import Dropdown from '@mui/material/Dropdown';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
+// import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
@@ -44,7 +44,7 @@ const Product = ({ product }) => {
   
       
      <Form>
-     <Dropdown>
+     {/* <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
         Order Return Status
       </Dropdown.Toggle>
@@ -54,7 +54,7 @@ const Product = ({ product }) => {
         <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
         <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
       </Dropdown.Menu>
-    </Dropdown>
+    </Dropdown> */}
     
     </Form>
     </Card>
