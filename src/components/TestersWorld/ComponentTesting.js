@@ -5,10 +5,11 @@ import Form from 'react-bootstrap/Form';
 import {useState} from 'react';
   
 import Box from '@mui/material/Box';
-// import Dropdown from '@mui/material/Dropdown';
+// import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
-// import FormControl from '@mui/material/FormControl';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 
@@ -16,47 +17,50 @@ const Product = ({ product }) => {
   const [email,setEmail] = useState("")
   const [pwd,setPwd] = useState("")
   const [errorMessage,setErrorMessage]= useState("")
-
-  const mockData ={
-    correctEmail:"test@wynisco.com",
-    correctPwd:"WyniscoTraining",
-  }
-
-  console.log(pwd);
-  function handleSubmit (e) {
-    e.preventDefault()
-  if(mockData.correctEmail=== email && mockData.correctPwd){
-    window.location.replace("testswelcome")
-  } 
-  else {
-    setErrorMessage("Please enter valid email or password")
-  }
   
-  }
+
+  const [age, setAge] = React.useState('');
+
+  const handleChange = (event: SelectChangeEvent) => {
+    setAge(event.target.value);
+  };
   return (
     <Card className='my-3 p-3 rounded'>
-    <h2> COMPONENT TESTING INSTRUCTIONS</h2>
-    <p>  This page </p>
-
-    <p> In all other cases it will return an error message on top </p>
-
-    <p> Url of this page is tests/autotestform</p>
-  
-      
-     <Form>
-     {/* <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Order Return Status
-      </Dropdown.Toggle>
-
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">Returned</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown> */}
-    
-    </Form>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <InputLabel id="demo-simple-select-helper-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={age}
+          label="Age"
+          onChange={handleChange}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>With label + helper text</FormHelperText>
+      </FormControl>
+      <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <Select
+          value={age}
+          onChange={handleChange}
+          displayEmpty
+          inputProps={{ 'aria-label': 'Without label' }}
+        >
+          <MenuItem value="">
+            <em>None</em>
+          </MenuItem>
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+        <FormHelperText>Without label</FormHelperText>
+      </FormControl>
+     
     </Card>
   )
 }
