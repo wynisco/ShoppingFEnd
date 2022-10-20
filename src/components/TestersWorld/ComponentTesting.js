@@ -11,7 +11,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Checkbox from '@mui/material/Checkbox';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const Product = ({ product }) => {
   const [email,setEmail] = useState("")
@@ -60,7 +63,10 @@ const Product = ({ product }) => {
         </Select>
         <FormHelperText>Without label</FormHelperText>
       </FormControl>
-     
+      <FormControlLabel control={<Checkbox defaultChecked />} label="Are you above 18" />
+
+      
+      
     </Card>
   )
 }
